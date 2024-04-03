@@ -64,9 +64,9 @@ function OptionBlock({ option }) {
           <label className="text-base md:text-lg font-medium cursor-pointer break-all">
             &mdash;{name}
           </label>
-          <button className="w-4 h-4" onClick={() => deleteOption(id)}>
+          {/* <button className="w-4 h-4" onClick={() => deleteOption(id)}>
             <TrashIcon className="text-red-600" />
-          </button>
+          </button> */}
         </div>
       </div>
       {(showDescription || showDefaultValue || showValueRange) && (
