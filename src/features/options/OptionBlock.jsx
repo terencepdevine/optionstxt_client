@@ -19,7 +19,7 @@ function OptionBlock({ option }) {
     name,
     description,
     value_type,
-    value_default,
+    value,
     value_min,
     value_max,
     value_options,
@@ -78,7 +78,7 @@ function OptionBlock({ option }) {
               {showDefaultValue && (
                 <div>
                   <span className="font-medium">Default Value: </span>
-                  <span className="italic">{value_default}</span>
+                  <span className="italic">{value}</span>
                 </div>
               )}
 

@@ -23,11 +23,13 @@ function Sidebar() {
   const { customOptions, onCustomOptions, updateCustomOption } =
     useContext(OptionsContext);
 
+  const os = navigator.userAgent;
+  const osWin = os.indexOf("Win");
+  const osMac = os.indexOf("Mac");
+
   function handleDownload() {
     const data = customOptions.map((option) => {
-      return `-${option.name}=${option.value_default}${String.fromCharCode(
-        10
-      )}`;
+      return `-${option.name}=${option.value}${String.fromCharCode(10)}`;
     });
 
     const file = new Blob(data, {
@@ -44,6 +46,9 @@ function Sidebar() {
           Check options in the list to add them to your custom{" "}
           <Bold>Options.txt</Bold> file and then download and save.
         </p>
+        {osWin !== -1 && <p>This is Windows</p>}
+        {osMac !== -1 && <p>This is Mac</p>}
+        {osWin === -1 && osMac === -1 && <p>Something else ya big nerd!</p>}
       </SidebarBlock>
       <div className="flex-1 overflow-hidden bg-neutral-200 shadow-inner rounded-lg p-2">
         <div className="flex h-full flex-col overflow-y-scroll no-scrollbar">
@@ -65,7 +70,7 @@ function Sidebar() {
                         name=""
                         id=""
                         className="bg-neutral-200 w-24 rounded-lg px-2 py-1"
-                        defaultValue={option.value_default}
+                        defaultValue={option.value}
                         onChange={(e) =>
                           updateCustomOption(option, e.target.value)
                         }
@@ -79,7 +84,7 @@ function Sidebar() {
                       option.value_type === "directory") && (
                       <input
                         type="text"
-                        defaultValue={option.value_default}
+                        defaultValue={option.value}
                         className="bg-neutral-200 w-24 rounded-lg px-4 py-1"
                         onChange={(e) =>
                           updateCustomOption(option, e.target.value)
@@ -91,7 +96,7 @@ function Sidebar() {
                       option.value_type === "float") && (
                       <input
                         type="number"
-                        defaultValue={option.value_default}
+                        defaultValue={option.value}
                         className="bg-neutral-200 w-24 rounded-lg px-4 py-1"
                         onChange={(e) =>
                           updateCustomOption(option, e.target.value)
@@ -106,7 +111,7 @@ function Sidebar() {
                           updateCustomOption(option, e.target.value)
                         }
                       >
-                        {option.value_options.map((o, i) => (
+                        {option.value_options?.map((o, i) => (
                           <option value={o} key={i}>
                             {o}
                           </option>

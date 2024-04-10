@@ -13,7 +13,8 @@ import PageNotFound from "./pages/PageNotFound";
 // import SavedOptions from "./pages/SavedOptions";
 import AppLayout from "./ui/AppLayout";
 import { useState } from "react";
-import OptionsContext from "./features/options/OptionsContext.js";
+import OptionsContext from "./features/options/OptionsContext";
+import SearchContext from "./features/search/SearchContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -52,6 +53,9 @@ function App() {
   const handleShowDescription = () => setShowDescription((prev) => !prev);
   const handleShowDefaultValue = () => setShowDefaultValue((prev) => !prev);
   const handleShowValueRange = () => setShowValueRange((prev) => !prev);
+  const [search, setSearch] = useState("");
+  const [searchName, setSearchName] = useState(true);
+  const [searchDescription, setSearchDescription] = useState(false);
 
   return (
     <OptionsContext.Provider
@@ -67,43 +71,54 @@ function App() {
         updateCustomOption: updateCustomOption,
       }}
     >
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <BrowserRouter>
-          <Routes>
-            <Route element={<AppLayout />}>
-              <Route index element={<OptionsBuilder />} />
-              {/* <Route path="options" element={<Options />} />
+      <SearchContext.Provider
+        value={{
+          search,
+          setSearch,
+          searchName,
+          setSearchName,
+          searchDescription,
+          setSearchDescription,
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <BrowserRouter>
+            <Routes>
+              <Route element={<AppLayout />}>
+                <Route index element={<OptionsBuilder />} />
+                {/* <Route path="options" element={<Options />} />
               <Route path="login" element={<Login />} />
               <Route path="account" element={<Account />} />
               <Route path="saved-options" element={<SavedOptions />} /> */}
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-        <Toaster
-          position="bottom-center"
-          gutter={16}
-          containerStyle={{
-            margin: "8px",
-          }}
-          toastOptions={{
-            success: {
-              duration: 3000,
-            },
-            error: {
-              duration: 5000,
-            },
-            style: {
-              fontSize: "16px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "#fff",
-              color: "#999",
-            },
-          }}
-        />
-      </QueryClientProvider>
+                <Route path="*" element={<PageNotFound />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+          <Toaster
+            position="bottom-center"
+            gutter={16}
+            containerStyle={{
+              margin: "8px",
+            }}
+            toastOptions={{
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 5000,
+              },
+              style: {
+                fontSize: "16px",
+                maxWidth: "500px",
+                padding: "16px 24px",
+                backgroundColor: "#fff",
+                color: "#999",
+              },
+            }}
+          />
+        </QueryClientProvider>
+      </SearchContext.Provider>
     </OptionsContext.Provider>
   );
 }
