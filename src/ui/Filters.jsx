@@ -17,18 +17,18 @@ function Filters({ count }) {
   } = useContext(OptionsContext);
 
   return (
-    <div className="sticky z-10 top-0 bg-white bg-opacity-90 backdrop-blur-sm border-b border-neutral-300 w-full py-3">
-      <div className="col-span-full flex flex-row-reverse justify-between items-center gap-4 relative">
-        <span className="text-sm italic text-neutral-500 shrink-0">
-          (Displaying {count} Options)
+    <div className="sticky top-0 z-10 w-full border-b border-neutral-300 bg-white bg-opacity-90 py-3 backdrop-blur-sm">
+      <div className="relative col-span-full flex flex-row-reverse items-center justify-between gap-4">
+        <span className="shrink-0 text-sm italic text-neutral-500">
+          (Displaying {count ? count : "0"} Option{count !== 1 && "s"})
         </span>
         <span className="relative">
           <button
-            className="flex gap-2 items-center text-sm font-medium shrink-0"
+            className="flex shrink-0 items-center gap-2 text-sm font-medium"
             onClick={() => setShowDisplayOpions((prev) => !prev)}
           >
             Display Options
-            <ListBulletIcon className="w-4 h-4" />
+            <ListBulletIcon className="h-4 w-4" />
           </button>
           <List show={showDisplayOptions} handleShowMenu={setShowDisplayOpions}>
             <ChecklistItem

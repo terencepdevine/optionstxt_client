@@ -1,39 +1,26 @@
-import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
-import { getOptions } from "../services/apiOptions";
-
-import Spinner from "./Spinner";
+import Loader from "./Loader";
 import OptionBlock from "../features/options/OptionBlock";
 import Filters from "./Filters";
+import { useContext } from "react";
+import OptionsContext from "../features/options/OptionsContext";
 
 function OptionsList() {
-  useEffect(function () {
-    getOptions();
-  }, []);
+  const { isLoading, error, filteredOptions } = useContext(OptionsContext);
 
-  const {
-    isLoading,
-    data: options,
-    error,
-  } = useQuery({
-    queryKey: ["options"],
-    queryFn: getOptions,
-  });
-
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Loader />;
 
   if (error) {
     console.error(error);
-    throw new Error("Couldn't load");
+    throw new Error("Could not load options");
   }
 
   return (
     <>
       <div className="w-full lg:w-2/3">
         <div className="flex-col">
-          <Filters count={options.length} />
-          <div className="flex flex-col gap-2 pt-2 pb-8">
-            {options.map((option) => (
+          <Filters count={filteredOptions?.length} />
+          <div className="flex flex-col gap-2 pb-8 pt-2">
+            {filteredOptions?.map((option) => (
               <OptionBlock option={option} key={option.id} />
             ))}
           </div>

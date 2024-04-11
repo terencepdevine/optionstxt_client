@@ -1,15 +1,15 @@
 import { ListBulletIcon, UserIcon } from "@heroicons/react/24/solid";
-import {
-  ArrowRightStartOnRectangleIcon,
-  BookmarkIcon,
-  CogIcon,
-  SunIcon,
-} from "@heroicons/react/24/outline";
+// import {
+//   ArrowRightStartOnRectangleIcon,
+//   BookmarkIcon,
+//   CogIcon,
+//   SunIcon,
+// } from "@heroicons/react/24/outline";
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import List from "./List";
 import ChecklistItem from "./ChecklistItem";
-import MenulistItem from "./MenulistItem";
+// import MenulistItem from "./MenulistItem";
 import { Link } from "react-router-dom";
 import Grid from "./Grid";
 import SearchContext from "../features/search/SearchContext";
@@ -25,7 +25,7 @@ function Header() {
     setSearchDescription,
   } = useContext(SearchContext);
   const [showSearchFields, setShowSearchFields] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 27) {
@@ -37,39 +37,39 @@ function Header() {
   const isRoot = location.pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 left-0 right-0 bg-white bg-opacity-[85%] backdrop-blur py-2 border-b-neutral-300 border-b">
+    <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur">
       <Grid>
-        <div className="w-full flex justify-between gap-8 items-center">
-          <div className="flex flex-1 gap-8 items-center">
-            <h1 className="text-xl md:text-3xl py-2 text-neutral-900 font-medium transition-all hover:text-blue-900">
+        <div className="flex w-full items-center justify-between gap-8">
+          <div className="flex flex-1 items-center gap-8">
+            <h1 className="py-2 text-xl font-medium text-neutral-900 transition-all hover:text-blue-900 md:text-3xl">
               <Link to="/">
                 Options
-                <span className="text-blue-500 font-normal italic">txt</span>
+                <span className="font-normal italic text-blue-500">txt</span>
               </Link>
             </h1>
             {isRoot && (
-              <div className="relative flex justify-between items-center justify-items-stretch max-w-[500px] grow bg-neutral-200 shadow-inner rounded-lg">
+              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded-lg bg-neutral-200 shadow-inner">
                 <input
                   value={search}
                   type="text"
                   placeholder="Search Options..."
                   spellCheck={false}
-                  className="text-neutral-700 bg-transparent flex-1 px-5 py-2 md:py-3 focus:outline-none placeholder:text-neutral-500 placeholder:italic min-w-0"
+                  className="min-w-0 flex-1 bg-transparent px-5 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:py-3"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
                   onKeyDown={handleKeyDown}
                 />
-                <div className="flex items-center shrink-0 relative">
+                <div className="relative flex shrink-0 items-center">
                   <button
                     onClick={() => setShowSearchFields((prev) => !prev)}
                     className={
-                      "flex gap-2 items-center pr-5 font-medium transition-colors hover:text-blue-600 " +
+                      "flex items-center gap-2 pr-5 font-medium transition-colors hover:text-blue-600 " +
                       (showSearchFields && "text-neutral-400")
                     }
                   >
                     Search Fields
-                    <ListBulletIcon className="w-6 h-6" />
+                    <ListBulletIcon className="h-6 w-6" />
                   </button>
 
                   {showSearchFields && (
@@ -133,14 +133,19 @@ function Header() {
           </List> */}
 
           <nav>
-            <ul className="flex gap-8 items-center">
+            <ul className="flex items-center gap-8">
               <li>
-                <Link to="login" className="text-blue-600 font-medium">
+                <Link to="login" className="font-medium text-blue-600">
                   Login
                 </Link>
               </li>
               <li>
-                <Button to="create-account">Create Account</Button>
+                <Button
+                  to="create-account"
+                  icon={<UserIcon className="h-5 w-5" />}
+                >
+                  Create Account
+                </Button>
               </li>
             </ul>
           </nav>
