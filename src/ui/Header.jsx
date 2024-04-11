@@ -40,7 +40,7 @@ function Header() {
     <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur">
       <Grid>
         <div className="flex w-full items-center justify-between gap-8">
-          <div className="flex flex-1 items-center gap-8">
+          <div className="flex flex-1 items-center gap-4 md:gap-8">
             <h1 className="py-2 text-xl font-medium text-neutral-900 transition-all hover:text-blue-900 md:text-3xl">
               <Link to="/">
                 Options
@@ -68,7 +68,8 @@ function Header() {
                       (showSearchFields && "text-neutral-400")
                     }
                   >
-                    Search Fields
+                    <span className="hidden md:visible">Search Fields</span>
+
                     <ListBulletIcon className="h-6 w-6" />
                   </button>
 

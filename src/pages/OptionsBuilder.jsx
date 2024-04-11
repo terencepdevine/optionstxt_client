@@ -1,6 +1,7 @@
 import OptionsContext from "../features/options/OptionsContext";
 import { useOptions } from "../features/options/useOptions";
 import SearchContext from "../features/search/SearchContext";
+import Grid from "../ui/Grid";
 
 import OptionsList from "../ui/OptionsList";
 import Sidebar from "../ui/Sidebar";
@@ -68,8 +69,10 @@ function OptionsBuilder() {
         filteredOptions,
       }}
     >
-      <OptionsList />
-      <Sidebar />
+      <Grid className="scrollbar flex-1 overflow-y-scroll">
+        <OptionsList />
+        <Sidebar />
+      </Grid>
     </OptionsContext.Provider>
   );
 }

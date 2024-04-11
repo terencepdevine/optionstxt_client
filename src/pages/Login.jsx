@@ -1,5 +1,11 @@
+import AuthLayout from "../ui/AuthLayout";
+
 function Login() {
-  return <h1>Login</h1>;
+  return (
+    <AuthLayout>
+      <h1>Login</h1>
+    </AuthLayout>
+  );
 }
 
 export default Login;

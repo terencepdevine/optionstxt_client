@@ -1,8 +1,23 @@
+import AuthLayout from "../ui/AuthLayout";
+import Button from "../ui/typography/Button";
+
 function AccountCreate() {
   return (
-    <div>
-      <h1>Create an Account</h1>
-    </div>
+    <AuthLayout>
+      <form>
+        <div>
+          <label>Username</label>
+          <input />
+        </div>
+        <div>
+          <label>Password</label>
+          <input />
+        </div>
+        <div>
+          <Button>Create Account</Button>
+        </div>
+      </form>
+    </AuthLayout>
   );
 }
 

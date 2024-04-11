@@ -14,7 +14,6 @@ import Login from "./pages/Login";
 import AppLayout from "./ui/AppLayout";
 import { useState } from "react";
 import SearchContext from "./features/search/SearchContext";
-import AuthLayout from "./ui/AuthLayout.jsx";
 import AccountCreate from "./pages/AccountCreate.jsx";
 
 const queryClient = new QueryClient({
@@ -47,11 +46,9 @@ function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route index element={<OptionsBuilder />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
-            <Route element={<AuthLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="create-account" element={<AccountCreate />} />
+              <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>
