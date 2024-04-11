@@ -7,6 +7,10 @@ function Button({ children, type = "default", to, icon, onClick, disabled }) {
     ? `${buttonStyles} hover:bg-blue-600`
     : `${buttonStyles} opacity-50 cursor-not-allowed`;
   buttonStyles = type === "full" ? `${buttonStyles} w-full` : buttonStyles;
+  buttonStyles =
+    type === "outline"
+      ? `${buttonStyles} border-blue-300 bg-transparent text-blue-400`
+      : buttonStyles;
 
   if (!to)
     return (

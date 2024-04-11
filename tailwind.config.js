@@ -8,15 +8,18 @@ export default {
       display: ["Jost", "sans-serif"],
     },
     extend: {
+      animation: {
+        grow: "grow 1s ease infinite",
+      },
+      backgroundImage: {
+        auth: "url('../public/images/bg-auth.png')",
+      },
       keyframes: {
         grow: {
           "0%": { transform: "scaleY(1)" },
           "50%": { transform: "scaleY(0)" },
           "100%": { transform: "scaleY(1)" },
         },
-      },
-      animation: {
-        grow: "grow 1s ease infinite",
       },
     },
   },

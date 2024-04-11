@@ -4,17 +4,26 @@ import Button from "../ui/typography/Button";
 function AccountCreate() {
   return (
     <AuthLayout>
-      <form>
-        <div>
+      <form className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
           <label>Username</label>
-          <input />
+          <input
+            type="text"
+            placeholder="Enter Username"
+            className="rounded-lg bg-neutral-200 p-4 shadow-inner"
+          />
         </div>
-        <div>
+        <div className="flex flex-col gap-2">
           <label>Password</label>
-          <input />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            className="rounded-lg bg-neutral-200 p-4 shadow-inner"
+          />
         </div>
-        <div>
+        <div className="flex flex-row gap-2">
           <Button>Create Account</Button>
+          <Button type="outline">Cancel</Button>
         </div>
       </form>
     </AuthLayout>
