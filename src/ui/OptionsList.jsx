@@ -20,9 +20,16 @@ function OptionsList() {
         <div className="flex-col">
           <Filters count={filteredOptions?.length} />
           <div className="flex flex-col gap-2 pb-8 pt-2">
-            {filteredOptions?.map((option) => (
-              <OptionBlock option={option} key={option.id} />
-            ))}
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map((option) => (
+                <OptionBlock option={option} key={option.id} />
+              ))
+            ) : (
+              <div className="flex flex-col gap-4 rounded bg-neutral-100 px-8 py-24 text-center italic">
+                <h1 className="text-xl">No Options Found</h1>
+                <p>Please update your search and try again</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

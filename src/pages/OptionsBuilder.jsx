@@ -10,23 +10,15 @@ function OptionsBuilder() {
   const { search, searchName, searchDescription } = useContext(SearchContext);
   const { isLoading, error, options } = useOptions();
   const filteredOptions =
-    search !== ""
-      ? options?.filter((option) => {
-          if (searchName && searchDescription)
-            return (
-              option.name.toLowerCase().includes(search.toLowerCase()) ||
-              option.description.toLowerCase().includes(search.toLowerCase())
-            );
-
-          if (searchName)
-            return option.name.toLowerCase().includes(search.toLowerCase());
-
-          if (searchDescription)
-            return option.description
-              .toLowerCase()
-              .includes(search.toLowerCase());
-
-          return option;
+    search.trim() !== ""
+      ? options.filter((option) => {
+          const nameMatch =
+            searchName &&
+            option.name.toLowerCase().includes(search.toLowerCase());
+          const descriptionMatch =
+            searchDescription &&
+            option.description.toLowerCase().includes(search.toLowerCase());
+          return nameMatch || descriptionMatch;
         })
       : options;
   const [customOptions, setCustomOptions] = useState([]);
