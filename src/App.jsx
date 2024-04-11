@@ -7,8 +7,8 @@ import { Toaster } from "react-hot-toast";
 
 import OptionsBuilder from "./pages/OptionsBuilder.jsx";
 import PageNotFound from "./pages/PageNotFound";
+import Login from "./pages/Login";
 // import Options from "./pages/Options";
-// import Login from "./pages/Login";
 // import Account from "./pages/Account";
 // import SavedOptions from "./pages/SavedOptions";
 import AppLayout from "./ui/AppLayout";
@@ -86,9 +86,14 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route element={<AppLayout />}>
+                <Route path="login" element={<Login />} />
+                <Route
+                  path="create-account"
+                  element={<h1>Create Account</h1>}
+                />
                 <Route index element={<OptionsBuilder />} />
                 {/* <Route path="options" element={<Options />} />
-              <Route path="login" element={<Login />} />
+              
               <Route path="account" element={<Account />} />
               <Route path="saved-options" element={<SavedOptions />} /> */}
                 <Route path="*" element={<PageNotFound />} />

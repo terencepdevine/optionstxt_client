@@ -17,7 +17,12 @@ function Button({ children, type = "default", to, icon, onClick, disabled }) {
     );
   else
     return (
-      <Link className={`${buttonStyles}`} onClick={onClick} disabled={disabled}>
+      <Link
+        to={to}
+        className={`${buttonStyles}`}
+        onClick={onClick}
+        disabled={disabled}
+      >
         {icon}
         {children}
       </Link>

@@ -4,8 +4,8 @@ import Sidebar from "../ui/Sidebar";
 function OptionsBuilder() {
   return (
     <>
-      <Sidebar />
       <OptionsList />
+      <Sidebar />
     </>
   );
 }
