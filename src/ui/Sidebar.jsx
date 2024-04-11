@@ -40,7 +40,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="top-0 flex w-full flex-col gap-8 py-8 md:sticky lg:w-1/3">
+    <div className="top-0 order-1 flex w-full flex-col gap-8 py-8 md:sticky md:order-2 lg:w-1/3">
       <SidebarBlock title="Customize your Ableton Options.txt">
         <p>
           Check options in the list to add them to your custom{" "}

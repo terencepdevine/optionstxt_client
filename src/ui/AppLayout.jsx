@@ -4,9 +4,9 @@ import Grid from "./Grid";
 
 function AppLayout() {
   return (
-    <div className="flex flex-col h-dvh overflow-hidden">
+    <div className="flex h-dvh flex-col overflow-hidden">
       <Header />
-      <Grid className="overflow-y-scroll scrollbar flex-1">
+      <Grid className="scrollbar flex-1 overflow-y-scroll">
         <Outlet />
       </Grid>
     </div>

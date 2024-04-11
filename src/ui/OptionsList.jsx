@@ -16,7 +16,7 @@ function OptionsList() {
 
   return (
     <>
-      <div className="w-full lg:w-2/3">
+      <div className="order-2 w-full md:order-1 lg:w-2/3">
         <div className="flex-col">
           <Filters count={filteredOptions?.length} />
           <div className="flex flex-col gap-2 pb-8 pt-2">
