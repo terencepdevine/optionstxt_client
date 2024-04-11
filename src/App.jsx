@@ -44,10 +44,11 @@ function App() {
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
           <Routes>
-            <Route element={<AppLayout />}>
+            <Route path="/" element={<AppLayout />}>
               <Route index element={<OptionsBuilder />} />
               <Route path="login" element={<Login />} />
               <Route path="create-account" element={<AccountCreate />} />
+
               <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
