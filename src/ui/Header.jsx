@@ -59,7 +59,7 @@ function Header() {
                   type="text"
                   placeholder="Search..."
                   spellCheck={false}
-                  className="w-32 min-w-0 bg-transparent px-4 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto md:px-5 md:py-3 dark:text-neutral-100 dark:placeholder:text-neutral-300"
+                  className="w-32 grow bg-transparent px-4 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto md:px-5 md:py-3 dark:text-neutral-100 dark:placeholder:text-neutral-300"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
