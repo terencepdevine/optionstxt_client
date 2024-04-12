@@ -44,7 +44,7 @@ function Header() {
       <Grid>
         <div className="flex w-full items-center justify-between gap-8">
           <div className="flex flex-1 items-center gap-4 md:gap-8">
-            <h1 className="py-2 text-xl font-medium text-neutral-900 transition-all hover:text-blue-900 md:text-3xl dark:text-neutral-100">
+            <h1 className="py-2 text-xl font-medium text-neutral-900 hover:text-blue-900 md:text-3xl dark:text-neutral-100 dark:hover:text-blue-200">
               <Link to="/">
                 Options
                 <span className="font-normal italic text-blue-600 dark:text-blue-400">
@@ -59,7 +59,7 @@ function Header() {
                   type="text"
                   placeholder="Search Options..."
                   spellCheck={false}
-                  className="min-w-0 flex-1 bg-transparent px-5 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:py-3 dark:placeholder:text-neutral-300"
+                  className="min-w-0 flex-1 bg-transparent px-5 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:py-3 dark:text-neutral-100 dark:placeholder:text-neutral-300"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
@@ -68,10 +68,7 @@ function Header() {
                 <div className="relative flex shrink-0 items-center">
                   <button
                     onClick={() => setShowSearchFields((prev) => !prev)}
-                    className={
-                      "flex items-center gap-2 pr-5 font-medium text-neutral-900 transition-colors hover:text-blue-700 dark:text-neutral-200 " +
-                      (showSearchFields && "text-neutral-400")
-                    }
+                    className={`flex items-center gap-2 pr-5 font-medium text-neutral-900 transition-colors hover:text-blue-700 dark:text-neutral-200 dark:hover:text-blue-400 ${showSearchFields && "text-neutral-400"}`}
                   >
                     <span className="hidden md:block">Search Fields</span>
 

@@ -24,7 +24,7 @@ function Filters({ count }) {
         </span>
         <span className="relative">
           <button
-            className="flex shrink-0 items-center gap-2 text-sm font-medium text-neutral-900 dark:text-neutral-100"
+            className="flex shrink-0 items-center gap-2 text-sm font-medium text-neutral-900 dark:text-neutral-100 dark:hover:text-blue-400"
             onClick={() => setShowDisplayOpions((prev) => !prev)}
           >
             Display Options

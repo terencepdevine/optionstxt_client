@@ -42,11 +42,15 @@ function Sidebar() {
   }
 
   return (
-    <div className="top-0 order-1 flex w-full flex-col gap-8 py-8 md:sticky md:order-2 lg:w-1/3">
+    <div className="top-0 order-1 flex w-full flex-col gap-8 py-8 md:sticky md:order-2 md:w-1/3">
       <SidebarBlock title="Customize your Ableton Options.txt">
         <p className="text-neutral-900 dark:text-neutral-200">
           Check options in the list to add them to your custom{" "}
-          <Link className="font-medium text-blue-600 dark:text-blue-400">
+          <Link
+            to="https://help.ableton.com/hc/en-us/articles/6003224107292-Options-txt-file"
+            target="_blank"
+            className="font-medium text-blue-600 dark:text-blue-400"
+          >
             Options.txt
           </Link>{" "}
           file and then download and save.
