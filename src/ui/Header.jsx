@@ -57,7 +57,7 @@ function Header() {
                 <input
                   value={search}
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Search Options..."
                   spellCheck={false}
                   className="w-32 grow bg-transparent px-4 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto md:px-5 md:py-3 dark:text-neutral-100 dark:placeholder:text-neutral-300"
                   onChange={(e) => {
