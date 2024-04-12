@@ -43,7 +43,7 @@ function Header() {
     <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur dark:border-b-neutral-700 dark:bg-neutral-900">
       <Grid>
         <div className="flex w-full items-center justify-between gap-4 md:gap-8">
-          <div className="flex items-center gap-4 md:gap-8">
+          <div className="flex grow items-center gap-4 md:gap-8">
             <h1 className="py-2 text-xl font-medium text-neutral-900 hover:text-blue-900 md:text-3xl dark:text-neutral-100 dark:hover:text-blue-200">
               <Link to="/">
                 Options
