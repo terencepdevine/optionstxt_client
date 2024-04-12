@@ -7,7 +7,7 @@ import OptionsContext from "../features/options/OptionsContext";
 function OptionsList() {
   const { isLoading, error, filteredOptions } = useContext(OptionsContext);
 
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
 
   if (error) {
     console.error(error);
@@ -15,12 +15,12 @@ function OptionsList() {
   }
 
   return (
-    <>
-      <div className="order-2 w-full md:order-1 lg:w-2/3">
-        <div className="flex-col">
-          <Filters count={filteredOptions?.length} />
+    <div className="order-2 w-full md:order-1 md:w-2/3">
+      <div className="flex-col">
+        <Filters count={filteredOptions?.length} />
+        {!isLoading ? (
           <div className="flex flex-col gap-2 pb-8 pt-2">
-            {filteredOptions.length > 0 ? (
+            {filteredOptions?.length > 0 ? (
               filteredOptions.map((option) => (
                 <OptionBlock option={option} key={option.id} />
               ))
@@ -31,9 +31,11 @@ function OptionsList() {
               </div>
             )}
           </div>
-        </div>
+        ) : (
+          <Loader />
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
