@@ -14,6 +14,7 @@ import ChecklistItem from "./ChecklistItem";
 import { Link } from "react-router-dom";
 import Grid from "./Grid";
 import SearchContext from "../features/search/SearchContext";
+import SettingsContext from "../features/settings/SettingsContext";
 // import Button from "./typography/Button";
 
 function Header() {
@@ -25,6 +26,7 @@ function Header() {
     searchDescription,
     setSearchDescription,
   } = useContext(SearchContext);
+  const { darkMode, toggleDarkMode } = useContext(SettingsContext);
   const [showSearchFields, setShowSearchFields] = useState(false);
   // const [showMenu, setShowMenu] = useState(false);
 
@@ -154,8 +156,15 @@ function Header() {
             </ul>
           </nav> */}
 
-          <button className="rounded-full bg-neutral-100 p-2 text-blue-600 transition-colors hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400">
-            <MoonIcon className="h-6 w-6" />
+          <button
+            className="rounded-full bg-neutral-100 p-2 text-blue-600 transition-colors hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400"
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? (
+              <MoonIcon className="h-6 w-6" />
+            ) : (
+              <SunIcon className="h-6 w-6" />
+            )}
           </button>
         </div>
       </Grid>

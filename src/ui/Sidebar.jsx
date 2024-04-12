@@ -71,7 +71,7 @@ function Sidebar() {
                       <select
                         name=""
                         id=""
-                        className="w-24 rounded-lg bg-neutral-200 px-2 py-1 text-neutral-900"
+                        className="w-24 rounded-lg bg-neutral-200 px-2 py-1 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100"
                         defaultValue={option.value}
                         onChange={(e) =>
                           updateCustomOption(option, e.target.value)
