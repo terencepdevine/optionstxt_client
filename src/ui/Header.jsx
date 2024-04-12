@@ -68,7 +68,7 @@ function Header() {
                       (showSearchFields && "text-neutral-400")
                     }
                   >
-                    <span className="hidden md:visible">Search Fields</span>
+                    <span className="hidden md:block">Search Fields</span>
 
                     <ListBulletIcon className="h-6 w-6" />
                   </button>
