@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteOption } from "../../services/apiOptions";
 import toast from "react-hot-toast";
-import { TrashIcon } from "@heroicons/react/24/outline";
 import { useContext } from "react";
 import OptionsContext from "./OptionsContext";
 

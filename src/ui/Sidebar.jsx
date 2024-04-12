@@ -46,8 +46,10 @@ function Sidebar() {
       <SidebarBlock title="Customize your Ableton Options.txt">
         <p className="text-neutral-900 dark:text-neutral-200">
           Check options in the list to add them to your custom{" "}
-          <Link className="font-medium text-blue-600">Options.txt</Link> file
-          and then download and save.
+          <Link className="font-medium text-blue-600 dark:text-blue-400">
+            Options.txt
+          </Link>{" "}
+          file and then download and save.
         </p>
       </SidebarBlock>
       <div className="flex-1 overflow-hidden rounded-lg bg-neutral-200 p-2 shadow-inner dark:bg-neutral-800 dark:shadow">
