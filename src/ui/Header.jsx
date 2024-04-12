@@ -68,7 +68,7 @@ function Header() {
                 <div className="relative flex shrink-0 items-center">
                   <button
                     onClick={() => setShowSearchFields((prev) => !prev)}
-                    className={`flex items-center gap-2 pr-5 font-medium text-neutral-900 transition-colors hover:text-blue-700 dark:text-neutral-200 dark:hover:text-blue-400 ${showSearchFields && "text-neutral-400"}`}
+                    className={`flex items-center gap-2 pr-5 font-medium text-neutral-900 hover:text-blue-700 dark:text-neutral-200 dark:hover:text-blue-400 ${showSearchFields && "text-neutral-400"}`}
                   >
                     <span className="hidden md:block">Search Fields</span>
 
@@ -154,7 +154,7 @@ function Header() {
           </nav> */}
 
           <button
-            className="rounded-full bg-neutral-100 p-2 text-blue-600 transition-colors hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400"
+            className="rounded-full bg-neutral-100 p-2 text-blue-600 hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400"
             onClick={toggleDarkMode}
           >
             {darkMode ? (
