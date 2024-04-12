@@ -1,4 +1,5 @@
-import { ListBulletIcon, UserIcon } from "@heroicons/react/24/solid";
+import { ListBulletIcon } from "@heroicons/react/24/solid";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 // import {
 //   ArrowRightStartOnRectangleIcon,
 //   BookmarkIcon,
@@ -13,7 +14,7 @@ import ChecklistItem from "./ChecklistItem";
 import { Link } from "react-router-dom";
 import Grid from "./Grid";
 import SearchContext from "../features/search/SearchContext";
-import Button from "./typography/Button";
+// import Button from "./typography/Button";
 
 function Header() {
   const {
@@ -37,24 +38,26 @@ function Header() {
   const isRoot = location.pathname === "/";
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur">
+    <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur dark:border-b-neutral-700 dark:bg-neutral-900">
       <Grid>
         <div className="flex w-full items-center justify-between gap-8">
           <div className="flex flex-1 items-center gap-4 md:gap-8">
-            <h1 className="py-2 text-xl font-medium text-neutral-900 transition-all hover:text-blue-900 md:text-3xl">
+            <h1 className="py-2 text-xl font-medium text-neutral-900 transition-all hover:text-blue-900 md:text-3xl dark:text-neutral-100">
               <Link to="/">
                 Options
-                <span className="font-normal italic text-blue-500">txt</span>
+                <span className="font-normal italic text-blue-600 dark:text-blue-400">
+                  txt
+                </span>
               </Link>
             </h1>
             {isRoot && (
-              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded-lg bg-neutral-200 shadow-inner">
+              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded-lg bg-neutral-200 shadow-inner dark:bg-neutral-800 dark:shadow">
                 <input
                   value={search}
                   type="text"
                   placeholder="Search Options..."
                   spellCheck={false}
-                  className="min-w-0 flex-1 bg-transparent px-5 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:py-3"
+                  className="min-w-0 flex-1 bg-transparent px-5 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:py-3 dark:placeholder:text-neutral-300"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
@@ -64,7 +67,7 @@ function Header() {
                   <button
                     onClick={() => setShowSearchFields((prev) => !prev)}
                     className={
-                      "flex items-center gap-2 pr-5 font-medium transition-colors hover:text-blue-600 " +
+                      "flex items-center gap-2 pr-5 font-medium text-neutral-900 transition-colors hover:text-blue-700 dark:text-neutral-200 " +
                       (showSearchFields && "text-neutral-400")
                     }
                   >
@@ -133,7 +136,7 @@ function Header() {
             />
           </List> */}
 
-          <nav>
+          {/* <nav>
             <ul className="flex items-center gap-8">
               <li>
                 <Link to="login" className="font-medium text-blue-600">
@@ -149,7 +152,11 @@ function Header() {
                 </Button>
               </li>
             </ul>
-          </nav>
+          </nav> */}
+
+          <button className="rounded-full bg-neutral-100 p-2 text-blue-600 transition-colors hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400">
+            <MoonIcon className="h-6 w-6" />
+          </button>
         </div>
       </Grid>
     </header>

@@ -22,12 +22,24 @@
     background: #d4d4d4;
   }
 
+  .dark .scrollbar::-webkit-scrollbar-track {
+    background: #404040;
+  }
+
   .scrollbar::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background: #a3a3a3;
   }
 
+  .dark .scrollbar::-webkit-scrollbar-thumb {
+    background: #737373;
+  }
+
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: #737373;
+  }
+
+  .dark .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
   }
 }

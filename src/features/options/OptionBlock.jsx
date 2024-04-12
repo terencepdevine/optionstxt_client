@@ -46,8 +46,10 @@ function OptionBlock({ option }) {
   return (
     <div
       key={id}
-      className={`flex flex-col gap-2 bg-neutral-100 p-4 md:p-6 cursor-pointer rounded hover:bg-opacity-50 transition-all ring-2 ring-inset hover:ring-blue-500 ${
-        isActive ? "ring-blue-500 bg-opacity-25" : "ring-transparent"
+      className={`flex cursor-pointer flex-col gap-2 rounded bg-neutral-100 p-4 ring-2 ring-inset transition-all hover:bg-opacity-50 hover:ring-blue-600 md:p-6 dark:bg-neutral-800 dark:hover:ring-blue-400 ${
+        isActive
+          ? "bg-opacity-25 ring-blue-600 dark:ring-blue-400"
+          : "ring-transparent"
       }`}
       onClick={() => {
         onCustomOptions(option);
@@ -56,12 +58,12 @@ function OptionBlock({ option }) {
       <div className="flex items-center gap-4 md:gap-6">
         <input
           type="checkbox"
-          className="w-6 h-6 cursor-pointer"
+          className="h-6 w-6 cursor-pointer"
           checked={isActive}
           readOnly
         />
         <div className="flex items-center gap-2">
-          <label className="text-base md:text-lg font-medium cursor-pointer break-all">
+          <label className="cursor-pointer break-all text-base font-medium md:text-lg">
             &mdash;{name}
           </label>
           {/* <button className="w-4 h-4" onClick={() => deleteOption(id)}>
@@ -71,10 +73,14 @@ function OptionBlock({ option }) {
       </div>
       {(showDescription || showDefaultValue || showValueRange) && (
         <div className="flex flex-col gap-4 pl-10 md:pl-12">
-          {showDescription && <p>{description}</p>}
+          {showDescription && (
+            <p className="text-neutreal-900 dark:text-neutral-100">
+              {description}
+            </p>
+          )}
 
           {(showDefaultValue || showValueRange) && (
-            <div className="flex flex-col lg:flex-row gap-1 lg:gap-4 bg-neutral-200 px-4 rounded py-2 text-sm">
+            <div className="flex flex-col gap-1 rounded bg-neutral-200 px-4 py-2 text-sm text-neutral-900 lg:flex-row lg:gap-4 dark:bg-neutral-700 dark:text-neutral-100">
               {showDefaultValue && (
                 <div>
                   <span className="font-medium">Default Value: </span>
@@ -88,7 +94,7 @@ function OptionBlock({ option }) {
                     <div>
                       <span className="font-medium">Value Range: </span>
                       <span className="italic">
-                        {value_min} &mdash; {value_max}
+                        {value_min} &mdash; {value_max ? value_max : "inf"}
                       </span>
                     </div>
                   )}
