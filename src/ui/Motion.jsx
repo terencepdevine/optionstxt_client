@@ -5,7 +5,7 @@ const Motion = ({ children, className, delay = 0.0 }) => {
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay }}
+      transition={{ duration: 0.25, delay }}
       className={className}
     >
       {children}

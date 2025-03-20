@@ -3,7 +3,6 @@ import { deleteOption } from "../../services/apiOptions";
 import toast from "react-hot-toast";
 import { useContext } from "react";
 import OptionsContext from "./OptionsContext";
-import { CheckIcon } from "@heroicons/react/16/solid";
 import OptionCheckbox from "../../ui/OptionCheckbox";
 
 function OptionBlock({ option }) {
@@ -62,9 +61,6 @@ function OptionBlock({ option }) {
           <span className="cursor-pointer break-all text-base font-medium md:text-lg">
             &mdash;{name}
           </span>
-          {/* <button className="w-4 h-4" onClick={() => deleteOption(id)}>
-            <TrashIcon className="text-red-600" />
-          </button> */}
         </div>
       </div>
       {(showDescription || showDefaultValue || showValueRange) && (

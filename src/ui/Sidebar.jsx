@@ -1,13 +1,17 @@
-import Button from "./typography/Button";
+import { Link } from "react-router-dom";
 import { saveAs } from "file-saver";
+
+import { useContext } from "react";
+import OptionsContext from "../features/options/OptionsContext";
+
 import {
   ArrowDownCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
-import { useContext } from "react";
-import OptionsContext from "../features/options/OptionsContext";
-import { Link } from "react-router-dom";
+
+import Button from "./typography/Button";
 import OptionCustom from "./OptionCustomList";
+import Motion from "./Motion";
 
 function SidebarBlock({ children, title }) {
   return (
@@ -55,20 +59,18 @@ function Sidebar() {
           {customOptions[0] ? (
             <OptionCustom />
           ) : (
-            <>
-              <div className="flex flex-1 items-center justify-center p-4 lg:p-6">
-                <div className="flex items-center rounded bg-white p-4 text-neutral-600 shadow-sm dark:bg-neutral-700 dark:text-neutral-200">
-                  <ExclamationCircleIcon className="mr-4 w-6 shrink-0" />
-                  <div>
-                    <h4 className="italic">No options chosen.</h4>
-                    <p className="text-sm italic">
-                      Add an option from the list to start creating your
-                      Options.txt file
-                    </p>
-                  </div>
+            <Motion className="flex flex-1 items-center justify-center p-4 lg:p-6">
+              <div className="flex items-center rounded bg-white p-4 text-neutral-600 shadow-sm dark:bg-neutral-700 dark:text-neutral-200">
+                <ExclamationCircleIcon className="mr-4 w-6 shrink-0" />
+                <div>
+                  <h4 className="italic">No options chosen.</h4>
+                  <p className="text-sm italic">
+                    Add an option from the list to start creating your
+                    Options.txt file
+                  </p>
                 </div>
               </div>
-            </>
+            </Motion>
           )}
           <div className="flex w-full gap-2 pt-2">
             <Button
