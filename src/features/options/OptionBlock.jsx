@@ -13,7 +13,7 @@ function OptionBlock({ option }) {
     onCustomOptions,
   } = useContext(OptionsContext);
 
-  let {
+  const {
     id,
     name,
     description,
@@ -45,9 +45,9 @@ function OptionBlock({ option }) {
   return (
     <div
       key={id}
-      className={`flex cursor-pointer flex-col gap-2 rounded bg-neutral-100 p-4 ring-2 ring-inset hover:bg-opacity-50 hover:ring-blue-600 md:p-6 dark:bg-neutral-800 dark:hover:ring-blue-400 ${
+      className={`flex cursor-pointer flex-col gap-2 rounded bg-neutral-100 p-4 ring-2 ring-inset transition-all hover:bg-opacity-50 md:p-6 dark:bg-neutral-800 ${
         isActive
-          ? "bg-opacity-25 ring-blue-600 dark:ring-blue-400"
+          ? "bg-opacity-50 ring-blue-600 dark:ring-blue-400"
           : "ring-transparent"
       }`}
       onClick={() => {

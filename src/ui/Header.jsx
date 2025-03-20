@@ -44,8 +44,8 @@ function Header() {
       <Grid>
         <div className="flex w-full items-center justify-between gap-4 md:gap-8">
           <div className="flex grow items-center gap-4 md:gap-8">
-            <h1 className="py-2 text-xl font-medium text-neutral-900 hover:text-blue-900 md:text-3xl dark:text-neutral-100 dark:hover:text-blue-200">
-              <Link to="/">
+            <h1 className=" text-xl font-medium text-neutral-900 hover:text-blue-900 md:text-3xl dark:text-neutral-300 dark:hover:text-blue-200">
+              <Link to="/" className="flex gap-0.5">
                 Options
                 <span className="font-normal italic text-blue-600 dark:text-blue-400">
                   txt
@@ -53,13 +53,13 @@ function Header() {
               </Link>
             </h1>
             {isRoot && (
-              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded-lg bg-neutral-200 shadow-inner dark:bg-neutral-800 dark:shadow">
+              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded bg-neutral-200 dark:bg-neutral-800">
                 <input
                   value={search}
                   type="text"
                   placeholder="Search Options..."
                   spellCheck={false}
-                  className="w-32 grow bg-transparent px-4 py-2 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto md:px-5 md:py-3 dark:text-neutral-100 dark:placeholder:text-neutral-300"
+                  className="w-32 grow bg-transparent px-4 py-2.5 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto dark:text-neutral-100 dark:placeholder:text-neutral-500"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}

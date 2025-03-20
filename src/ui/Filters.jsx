@@ -19,8 +19,8 @@ function Filters({ count }) {
   return (
     <div className="sticky top-0 z-10 w-full border-b border-neutral-300 bg-white bg-opacity-90 py-3 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900 dark:bg-opacity-95">
       <div className="relative col-span-full flex flex-row-reverse items-center justify-between gap-4">
-        <span className="shrink-0 text-sm italic text-neutral-500 dark:text-neutral-200">
-          (Displaying {count ? count : "0"} Option{count !== 1 && "s"})
+        <span className="shrink-0 text-sm italic text-neutral-500 dark:text-neutral-300">
+          Displaying {count ? count : "0"} Option{count !== 1 && "s"}
         </span>
         <span className="relative">
           <button

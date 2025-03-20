@@ -42,7 +42,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="top-0 order-1 flex w-full flex-col gap-8 py-8 md:sticky md:order-2 md:w-1/3">
+    <div className="top-0 order-1 flex w-full flex-col gap-8 py-8 transition-all md:sticky md:order-2 md:w-[280px] xl:w-[380px] 2xl:w-[480px]">
       <SidebarBlock title="Customize your Ableton Options.txt">
         <p className="text-neutral-900 dark:text-neutral-200">
           Check options in the list to add them to your custom{" "}
@@ -56,14 +56,14 @@ function Sidebar() {
           file and then download and save.
         </p>
       </SidebarBlock>
-      <div className="flex-1 overflow-hidden rounded-lg bg-neutral-200 p-2 shadow-inner dark:bg-neutral-800 dark:shadow">
+      <div className="flex-1 overflow-hidden rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800">
         <div className="no-scrollbar flex h-full flex-col overflow-y-scroll">
           {customOptions[0] ? (
             <div className="scrollbar flex w-full flex-1 grow flex-col gap-2 overflow-y-scroll pr-2">
               {customOptions.map((option, i) => (
                 <div
                   key={i}
-                  className="flex justify-between gap-2 rounded bg-white px-4 py-2 shadow-sm dark:bg-neutral-700"
+                  className="flex justify-between gap-2 rounded bg-white px-4 py-2 dark:bg-neutral-700"
                 >
                   <div className="flex flex-row items-center gap-2">
                     <span className="shrink-1 break-all text-sm font-medium leading-tight text-neutral-900 dark:text-neutral-100">

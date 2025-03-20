@@ -13,7 +13,7 @@ function OptionsList() {
   }
 
   return (
-    <div className="order-2 w-full md:order-1 md:w-2/3">
+    <div className="order-2 w-full md:order-1 md:flex-1">
       <div className="flex-col">
         <Filters count={filteredOptions?.length} />
         {!isLoading ? (
