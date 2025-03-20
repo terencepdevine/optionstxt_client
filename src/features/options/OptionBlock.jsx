@@ -3,6 +3,8 @@ import { deleteOption } from "../../services/apiOptions";
 import toast from "react-hot-toast";
 import { useContext } from "react";
 import OptionsContext from "./OptionsContext";
+import { CheckIcon } from "@heroicons/react/16/solid";
+import OptionCheckbox from "../../ui/OptionCheckbox";
 
 function OptionBlock({ option }) {
   const {
@@ -55,16 +57,11 @@ function OptionBlock({ option }) {
       }}
     >
       <div className="flex items-center gap-4 md:gap-6">
-        <input
-          type="checkbox"
-          className="h-6 w-6 cursor-pointer"
-          checked={isActive}
-          readOnly
-        />
+        <OptionCheckbox isActive={isActive} />
         <div className="flex items-center gap-2">
-          <label className="cursor-pointer break-all text-base font-medium md:text-lg">
+          <span className="cursor-pointer break-all text-base font-medium md:text-lg">
             &mdash;{name}
-          </label>
+          </span>
           {/* <button className="w-4 h-4" onClick={() => deleteOption(id)}>
             <TrashIcon className="text-red-600" />
           </button> */}
