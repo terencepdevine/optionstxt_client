@@ -1,14 +1,13 @@
-import { XCircleIcon } from "@heroicons/react/24/solid";
 import Button from "./typography/Button";
 import { saveAs } from "file-saver";
 import {
   ArrowDownCircleIcon,
-  // BookmarkSquareIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useContext } from "react";
 import OptionsContext from "../features/options/OptionsContext";
 import { Link } from "react-router-dom";
+import OptionCustom from "./OptionCustomList";
 
 function SidebarBlock({ children, title }) {
   return (
@@ -22,12 +21,7 @@ function SidebarBlock({ children, title }) {
 }
 
 function Sidebar() {
-  const { customOptions, onCustomOptions, updateCustomOption } =
-    useContext(OptionsContext);
-
-  // const os = navigator.userAgent;
-  // const osWin = os.indexOf("Win");
-  // const osMac = os.indexOf("Mac");
+  const { customOptions } = useContext(OptionsContext);
 
   function handleDownload() {
     const data = customOptions.map((option) => {
@@ -59,79 +53,7 @@ function Sidebar() {
       <div className="flex-1 overflow-hidden rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800">
         <div className="no-scrollbar flex h-full flex-col overflow-y-scroll">
           {customOptions[0] ? (
-            <div className="scrollbar flex w-full flex-1 grow flex-col gap-2 overflow-y-scroll pr-2">
-              {customOptions.map((option, i) => (
-                <div
-                  key={i}
-                  className="flex justify-between gap-2 rounded bg-white px-4 py-2 dark:bg-neutral-700"
-                >
-                  <div className="flex flex-row items-center gap-2">
-                    <span className="shrink-1 break-all text-sm font-medium leading-tight text-neutral-900 dark:text-neutral-100">
-                      &mdash;{option.name}
-                    </span>
-                  </div>
-                  <div className="flex flex-row gap-3">
-                    {option.value_type === "boolean" && (
-                      <select
-                        name=""
-                        id=""
-                        className="w-24 rounded-lg bg-neutral-200 px-2 py-1 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100"
-                        defaultValue={option.value}
-                        onChange={(e) =>
-                          updateCustomOption(option, e.target.value)
-                        }
-                      >
-                        <option value="true">true</option>
-                        <option value="false">false</option>
-                      </select>
-                    )}
-
-                    {(option.value_type === "string" ||
-                      option.value_type === "directory") && (
-                      <input
-                        type="text"
-                        defaultValue={option.value}
-                        className="w-24 rounded-lg bg-neutral-200 px-4 py-1 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100"
-                        onChange={(e) =>
-                          updateCustomOption(option, e.target.value)
-                        }
-                      />
-                    )}
-
-                    {(option.value_type === "number" ||
-                      option.value_type === "float") && (
-                      <input
-                        type="number"
-                        defaultValue={option.value}
-                        className="w-24 rounded-lg bg-neutral-200 px-4 py-1 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100"
-                        onChange={(e) =>
-                          updateCustomOption(option, e.target.value)
-                        }
-                      />
-                    )}
-
-                    {option.value_type === "options" && (
-                      <select
-                        className="w-24 rounded-lg bg-neutral-200 px-2 py-1 text-neutral-900 dark:bg-neutral-600 dark:text-neutral-100"
-                        onChange={(e) =>
-                          updateCustomOption(option, e.target.value)
-                        }
-                      >
-                        {option.value_options?.map((o, i) => (
-                          <option value={o} key={i}>
-                            {o}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-
-                    <button onClick={() => onCustomOptions(option)}>
-                      <XCircleIcon className="h-5 w-5 text-red-600 dark:text-red-400" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <OptionCustom />
           ) : (
             <>
               <div className="flex flex-1 items-center justify-center p-4 lg:p-6">

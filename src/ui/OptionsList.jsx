@@ -1,8 +1,11 @@
+import { useContext } from "react";
+
 import Loader from "./Loader";
+
+import OptionsContext from "../features/options/OptionsContext";
 import OptionBlock from "../features/options/OptionBlock";
 import Filters from "./Filters";
-import { useContext } from "react";
-import OptionsContext from "../features/options/OptionsContext";
+import Motion from "./Motion";
 
 function OptionsList() {
   const { isLoading, error, filteredOptions } = useContext(OptionsContext);
@@ -17,7 +20,7 @@ function OptionsList() {
       <div className="flex-col">
         <Filters count={filteredOptions?.length} />
         {!isLoading ? (
-          <div className="flex flex-col gap-2 pb-8 pt-2">
+          <Motion className="flex flex-col gap-2 pb-8 pt-2">
             {filteredOptions?.length > 0 ? (
               filteredOptions.map((option) => (
                 <OptionBlock option={option} key={option.id} />
@@ -28,7 +31,7 @@ function OptionsList() {
                 <p>Please update your search and try again</p>
               </div>
             )}
-          </div>
+          </Motion>
         ) : (
           <Loader />
         )}
