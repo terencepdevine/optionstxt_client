@@ -24,10 +24,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animation-delay"),
-    "prettier-plugin-organize-attributes",
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss",
-  ],
+  plugins: [],
 };
