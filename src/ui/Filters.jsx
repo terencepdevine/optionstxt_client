@@ -17,7 +17,7 @@ function Filters({ count }) {
   } = useContext(OptionsContext);
 
   return (
-    <div className="sticky top-0 z-10 w-full border-b border-neutral-300 bg-white bg-opacity-90 py-3 dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="sticky top-0 z-10 w-full border-b border-neutral-300 bg-white py-3 dark:border-neutral-700 dark:bg-neutral-900">
       <div className="relative col-span-full flex flex-row-reverse items-center justify-between gap-4">
         <span className="shrink-0 text-sm italic text-neutral-500 dark:text-neutral-300">
           Displaying {count ? count : "0"} Option{count !== 1 && "s"}

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function Button({ children, type = "default", to, icon, onClick, disabled }) {
   let buttonStyles =
-    "flex items-center justify-center gap-2 bg-blue-500 text-white rounded px-4 py-2 border border-blue-500 drop-shadow transition-all";
+    "flex items-center justify-center gap-2 bg-blue-500 text-white rounded-sm px-4 py-2 border border-blue-500 drop-shadow-sm transition-all";
   buttonStyles = !disabled
-    ? `${buttonStyles} hover:bg-blue-700`
+    ? `${buttonStyles} hover:bg-blue-700 cursor-pointer`
     : `${buttonStyles} opacity-40 cursor-not-allowed`;
   buttonStyles = type === "full" ? `${buttonStyles} w-full` : buttonStyles;
   buttonStyles =

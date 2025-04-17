@@ -6,7 +6,7 @@ function ChecklistItem({ name, id, checked, handleClick }) {
         checked={checked}
         id={id}
         type="checkbox"
-        className="h-4 w-4 flex-shrink-0 cursor-pointer rounded-md accent-blue-500"
+        className="h-4 w-4 shrink-0 cursor-pointer rounded-md accent-blue-500"
       />
       <label
         htmlFor={id}

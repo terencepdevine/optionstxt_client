@@ -1,45 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Jost', sans-serif;
+  --background-image-auth: url('../public/images/bg-auth.png');
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+@utility scrollbar {
+  &::-webkit-scrollbar {
+    @apply w-2;
   }
 
-  .scrollbar::-webkit-scrollbar,
-  .scrollbar-dark::-webkit-scrollbar {
-    width: 8px;
+  &::-webkit-scrollbar-track {
+    @apply rounded-sm bg-neutral-500;
   }
 
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 4px;
-    background: #d4d4d4;
-  }
-
-  .dark .scrollbar::-webkit-scrollbar-track {
-    background: #404040;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    border-radius: 4px;
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-sm;
     background: #a3a3a3;
   }
 
-  .dark .scrollbar::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb:hover {
     background: #737373;
   }
+}
 
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #737373;
+@utility dark {
+  & .scrollbar::-webkit-scrollbar-track {
+    @apply bg-neutral-700;
   }
 
-  .dark .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #a3a3a3;
+  & .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neutral-500;
   }
 }

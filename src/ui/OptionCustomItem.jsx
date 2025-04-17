@@ -6,7 +6,7 @@ const OptionCustomItem = ({ option }) => {
   const { onCustomOptions, updateCustomOption } = useContext(OptionsContext);
 
   return (
-    <div className="flex justify-between gap-2 rounded bg-white px-4 py-2 dark:bg-neutral-700">
+    <div className="flex justify-between gap-2 rounded-sm bg-white px-4 py-2 dark:bg-neutral-700">
       <div className="flex flex-row items-center gap-2">
         <span className="shrink-1 break-all text-sm font-medium leading-tight text-neutral-900 dark:text-neutral-100">
           &mdash;{option.name}
@@ -58,7 +58,7 @@ const OptionCustomItem = ({ option }) => {
           </select>
         )}
 
-        <button onClick={() => onCustomOptions(option)}>
+        <button onClick={() => onCustomOptions(option)} className="cursor-pointer">
           <XCircleIcon className="h-5 w-5 text-red-600 dark:text-red-400" />
         </button>
       </div>

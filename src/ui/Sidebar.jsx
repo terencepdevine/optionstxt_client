@@ -60,7 +60,7 @@ function Sidebar() {
             <OptionCustom />
           ) : (
             <Motion className="flex flex-1 items-center justify-center p-4 lg:p-6">
-              <div className="flex items-center rounded bg-white p-4 text-neutral-600 shadow-sm dark:bg-neutral-700 dark:text-neutral-200">
+              <div className="flex items-center rounded-sm bg-white p-4 text-neutral-600 shadow-xs dark:bg-neutral-700 dark:text-neutral-200">
                 <ExclamationCircleIcon className="mr-4 w-6 shrink-0" />
                 <div>
                   <h4 className="italic">No options chosen.</h4>

@@ -46,9 +46,9 @@ function OptionBlock({ option }) {
   return (
     <div
       key={id}
-      className={`flex cursor-pointer flex-col gap-2 rounded bg-neutral-100 p-4 ring-2 ring-inset hover:bg-opacity-50 md:p-6 dark:bg-neutral-800 ${
+      className={`flex cursor-pointer flex-col gap-2 rounded bg-neutral-200 p-4 ring-2 ring-inset hover:dark:bg-neutral-800/50 md:p-6 dark:bg-neutral-800 ${
         isActive
-          ? "bg-opacity-50 ring-blue-600 dark:ring-blue-400"
+          ? "ring-blue-600 dark:ring-blue-400"
           : "ring-transparent"
       }`}
       onClick={() => {
@@ -72,7 +72,7 @@ function OptionBlock({ option }) {
           )}
 
           {(showDefaultValue || showValueRange) && (
-            <div className="flex flex-col gap-1 rounded bg-neutral-200 px-4 py-2 text-sm text-neutral-900 lg:flex-row lg:gap-4 dark:bg-neutral-700 dark:text-neutral-100">
+            <div className="flex flex-col gap-1 rounded-sm bg-neutral-200 px-4 py-2 text-sm text-neutral-900 lg:flex-row lg:gap-4 dark:bg-neutral-700 dark:text-neutral-100">
               {showDefaultValue && (
                 <div>
                   <span className="font-medium">Default Value: </span>

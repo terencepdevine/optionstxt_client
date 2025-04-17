@@ -40,7 +40,7 @@ function Header() {
   const isRoot = location.pathname === "/";
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white bg-opacity-[85%] py-2 backdrop-blur dark:border-b-neutral-700 dark:bg-neutral-900">
+    <header className="sticky left-0 right-0 top-0 z-50 border-b border-b-neutral-300 bg-white py-2 backdrop-blur-sm dark:border-b-neutral-700 dark:bg-neutral-900">
       <Grid>
         <div className="flex w-full items-center justify-between gap-4 md:gap-8">
           <div className="flex grow items-center gap-4 md:gap-8">
@@ -53,13 +53,13 @@ function Header() {
               </Link>
             </h1>
             {isRoot && (
-              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded bg-neutral-200 dark:bg-neutral-800">
+              <div className="relative flex max-w-[500px] grow items-center justify-between justify-items-stretch rounded-sm bg-neutral-200 dark:bg-neutral-800">
                 <input
                   value={search}
                   type="text"
                   placeholder="Search Options..."
                   spellCheck={false}
-                  className="w-32 grow bg-transparent px-4 py-2.5 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-none md:w-auto dark:text-neutral-100 dark:placeholder:text-neutral-500"
+                  className="w-32 grow bg-transparent px-4 py-2.5 text-neutral-700 placeholder:italic placeholder:text-neutral-500 focus:outline-hidden md:w-auto dark:text-neutral-100 dark:placeholder:text-neutral-500"
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
@@ -154,7 +154,7 @@ function Header() {
           </nav> */}
 
           <button
-            className="rounded-full bg-neutral-100 p-2 text-blue-600 hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400"
+            className="rounded-full cursor-pointer bg-neutral-100 p-2 text-blue-600 hover:bg-blue-600 hover:text-blue-100 dark:bg-neutral-800 dark:text-blue-400"
             onClick={toggleDarkMode}
           >
             {darkMode ? (
